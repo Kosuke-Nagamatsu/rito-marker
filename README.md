@@ -1,46 +1,40 @@
-# Getting Started with Create React App
+## デモ
+### 1. マーカーの作成
+作成後の位置情報などは、マーカーを削除するまでブラウザのローカルストレージに保存されます。
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://user-images.githubusercontent.com/83779040/215513094-55afc7e5-2df6-4cdd-b4d5-ae0e673193a3.mp4
 
-## Available Scripts
+### 2. ドラッグ&ドロップ
+上下左右の画面端に動かすと削除されます。投げる感覚で削除できたらと思い、そのようにしました。また、削除するとローカルストレージのデータも消去されます。
 
-In the project directory, you can run:
+https://user-images.githubusercontent.com/83779040/215513246-543c3aa4-b621-4e36-9826-1721b1d0c29d.mp4
 
-### `yarn start`
+### 3. 画像マーカーについて
+小豆島の場合だけ画像表示されます。訪れた場所のご当地写真を選び、記録すると良いかもしれません。
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+https://user-images.githubusercontent.com/83779040/215513658-991a8630-94f6-4aeb-80bd-24896aac34d1.mp4
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 使い方
+#### 事前準備
+```
+git clone git@github.com:Kosuke-Nagamatsu/rito-marker.git
+cd rito-marker
+```
 
-### `yarn test`
+#### Dockerを使用する場合
+1. Docker Desktopを起動後、次のコマンドでコンテナを起動します
+```
+docker-compose up -d
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. [http://localhost:3000](http://localhost:3000)へアクセスします
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Dockerを使用しない場合
+1. package.jsonに書かれたパッケージをインストールします（node： `v18.10.0`）
+```
+yarn
+```
+2. サーバーを起動します
+```
+yarn start
+```
