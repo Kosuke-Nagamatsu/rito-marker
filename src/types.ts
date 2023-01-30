@@ -1,4 +1,9 @@
+import { ReactNode } from 'react'
 import Konva from 'konva'
+
+export type ChildrenType = {
+  children: ReactNode
+}
 
 export type MultiInputValueType = string[]
 
@@ -29,5 +34,4 @@ export type ShapeMarkerContextType = {
   handleAddButtonClick: () => void
   handleMouseOver: (e: Konva.KonvaEventObject<MouseEvent>, text: string) => void
   handleMouseOut: () => void
-  getImageUrl: (text: string) => void
 }

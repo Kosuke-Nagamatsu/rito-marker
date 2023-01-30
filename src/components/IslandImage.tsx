@@ -1,9 +1,9 @@
 import useImage from 'use-image'
 import { useShapeMarkers } from './providers/ShapeMarkerProvider'
 import { Image } from 'react-konva'
-import { TextShapeType } from '../types'
+import type { TextShapeType } from '../types'
 
-export const IslandImage = (props: TextShapeType) => {
+export const IslandImage: React.FC<TextShapeType> = props => {
   const { imageUrl, id, x, y, isDragging, text } = props
   const { handleDragStart, handleDragEnd, handleMouseOut } = useShapeMarkers()
   const [image] = useImage(imageUrl)

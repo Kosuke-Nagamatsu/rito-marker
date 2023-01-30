@@ -1,9 +1,14 @@
 import { createContext, useContext, useState, useEffect, useMemo } from 'react'
 import { v4 } from 'uuid'
 import Konva from 'konva'
-import { MultiInputValueType, TextShapeType, ShapeMarkerContextType } from '../../types'
 import { ISLANDS, VALIDATION_MESSAGE } from '../../constants'
 import { hasWhitespace, toTexts, getImageUrl } from '../../utils'
+import type {
+  ChildrenType,
+  MultiInputValueType,
+  TextShapeType,
+  ShapeMarkerContextType,
+} from '../../types'
 
 // ローカルストレージに前回保存したデータがあれば、テキスト形状を管理するstateの初期値にする
 const jsonObj = localStorage.getItem('textShapes') || ''
@@ -22,13 +27,12 @@ const ShapeMarkerContext = createContext<ShapeMarkerContextType>({
   handleAddButtonClick: () => console.log(''),
   handleMouseOver: (e, text) => e,
   handleMouseOut: () => console.log(''),
-  getImageUrl: text => text,
 })
 
 // 形状の表示・削除やドラッグ&ドロップなど、マーカー機能に必要なプロパティを提供するカスタムフック
 export const useShapeMarkers = () => useContext(ShapeMarkerContext)
 
-export const ShapeMarkerProvider = (props: any) => {
+export const ShapeMarkerProvider: React.FC<ChildrenType> = props => {
   const { children } = props
   // ドラッグ&ドロップさせる形状を管理
   const [textShapes, setTextShapes] = useState(initialState)
@@ -161,7 +165,6 @@ export const ShapeMarkerProvider = (props: any) => {
         handleAddButtonClick,
         handleMouseOver,
         handleMouseOut,
-        getImageUrl,
       }}
     >
       {children}
