@@ -21,12 +21,17 @@ type ValidationType = {
   message: string
 }
 
+export type IslandType = {
+  name: string
+  imgUrl: string
+}
+
 export type ShapeMarkerContextType = {
   textShapes: TextShapeType[]
   inputValues: MultiInputValueType
   helperText: string
   validation: ValidationType
-  islands: string[]
+  islands: IslandType[]
   stage: { width: number; height: number }
   handleDragStart: (e: Konva.KonvaEventObject<DragEvent>) => void
   handleDragEnd: (e: Konva.KonvaEventObject<DragEvent>, text: string) => void
