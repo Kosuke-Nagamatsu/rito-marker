@@ -12,7 +12,7 @@ export const MarkerCreatingInputField = () => {
         multiple
         freeSolo
         filterSelectedOptions
-        options={islands}
+        options={islands.map(option => option.name)}
         value={inputValues}
         onChange={handleInputChange}
         sx={{
